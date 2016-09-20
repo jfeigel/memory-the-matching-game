@@ -1,0 +1,18 @@
+<md-content flex layout="column">
+  <div flex layout="row" layout-align="center center">
+    <div flex="66">
+      <md-grid-list md-cols="{{vm.numOfCols}}" md-gutter="1em" md-row-height="1:1">
+        <md-grid-tile md-colspan="1" ng-repeat="image in vm.images track by $index" class="flip-container" ng-click="vm.imageFlipped(image, $index)" ng-class="{'flipped': image.flipped}" ondragstart="return false;" ondrop="return false;" unselectable="on" class="unselectable">
+          <div class="flipper" flex layout-fill>
+            <div class="front" flex layout-fill>
+              <img ng-attr-src="{{image.url}}" />
+            </div>
+            <div class="back" flex layout-fill>
+              <span>S</span>
+            </div>
+          </div>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+  </div>
+</md-content>

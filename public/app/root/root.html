@@ -1,0 +1,11 @@
+<md-content flex layout-fill>
+  <md-nav-bar md-selected-nav-item="rootVm.currentNavItem" nav-bar-aria-label="navigation links">
+    <md-nav-item md-nav-sref="home" name="home">Home</md-nav-item>
+    <md-nav-item md-nav-sref="game" name="game" ng-if="rootVm.isAuthenticated()">New Game</md-nav-item>
+    <md-nav-item flex></md-nav-item>
+    <md-nav-item md-nav-click="rootVm.authenticate('instagram')" name="login" ng-if="!rootVm.isAuthenticated()">Login</md-nav-item>
+    <md-nav-item md-nav-sref="profile" name="profile" ng-if="rootVm.isAuthenticated()">Profile</md-nav-item>
+    <md-nav-item md-nav-click="rootVm.logout()" name="logout" ng-if="rootVm.isAuthenticated()">Logout</md-nav-item>
+  </md-nav-bar>
+  <ui-view class="md-padding" />
+</md-content>
