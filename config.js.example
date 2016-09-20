@@ -1,0 +1,8 @@
+module.exports = {
+  // App Settings
+  MONGO_URI: process.env.MONGO_URI || 'localhost',
+  TOKEN_SECRET: process.env.TOKEN_SECRET || 'secret-key',
+
+  // OAuth 2.0
+  INSTAGRAM_SECRET: process.env.INSTAGRAM_SECRET || 'instagram_secret'
+};
